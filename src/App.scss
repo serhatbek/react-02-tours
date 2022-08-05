@@ -29,9 +29,26 @@ img {
   width: 100%;
 }
 
+.tours__heading {
+  margin-bottom: 50px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: $price;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .tour-card {
   max-width: 500px;
   background-color: $white;
+  border-radius: 8px;
 
   &:not(:last-child) {
     margin-bottom: 40px;
@@ -41,7 +58,8 @@ img {
     height: 333px;
     width: 500px;
     overflow: hidden;
-    // margin-bottom: 30px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   &__content {
@@ -67,6 +85,14 @@ img {
     > p {
       margin-bottom: 30px;
       text-align: left;
+
+      > button {
+        background: transparent;
+        color: $price;
+        margin-left: 10px;
+        border: none;
+        cursor: pointer;
+      }
     }
 
     > button {

@@ -1,8 +1,14 @@
 import TourCard from '../TourCard/TourCard';
 
-const Tours = ({ tours }) => {
+const Tours = ({ tours, setTours }) => {
+  const deleteCard = () => {
+    // setTours()
+    console.log('first');
+  };
+
   return (
     <>
+      <h1 className='tours__heading'>Our Tours</h1>
       {tours.map((tour) => {
         const { id, image, name, price, info } = tour;
         return (
@@ -12,6 +18,7 @@ const Tours = ({ tours }) => {
             title={name}
             price={price}
             desc={info}
+            delBtn={deleteCard}
           />
         );
       })}

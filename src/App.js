@@ -39,7 +39,7 @@ function App() {
 
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} setTours={setTours} />
     </main>
   );
 }

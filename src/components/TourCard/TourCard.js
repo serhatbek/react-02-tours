@@ -1,4 +1,12 @@
-const TourCard = ({ img, title, price, desc }) => {
+import { useState } from 'react';
+
+const TourCard = ({ img, title, price, desc, delBtn }) => {
+  const [readMore, setReadMore] = useState(false);
+
+  const toggleReadMore = () => {
+    setReadMore(() => !readMore);
+  };
+
   return (
     <div className='tour-card'>
       <figure>
@@ -9,8 +17,13 @@ const TourCard = ({ img, title, price, desc }) => {
           <h3>{title}</h3>
           <span>{price}</span>
         </div>
-        <p>{desc}</p>
-        <button>Not Interested</button>
+        <p>
+          {readMore ? desc : `${desc.substring(0, 200)}...`}
+          <button onClick={toggleReadMore}>
+            {!readMore ? 'Read More' : 'Show Less'}
+          </button>
+        </p>
+        <button onClick={delBtn}>Not Interested</button>
       </div>
     </div>
   );

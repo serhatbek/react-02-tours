@@ -11,6 +11,15 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
+  /**
+   * ? @param {*} id
+   * * Arraydeki id'leri eşleşmeyen itemlardan yeni bir array oluştur, id'si eşleşen item'ı sil
+   */
+  const deleteCard = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   const fetchToursData = async () => {
     setLoading(true);
 
@@ -39,7 +48,7 @@ function App() {
 
   return (
     <main>
-      <Tours tours={tours} setTours={setTours} />
+      <Tours tours={tours} deleteCard={deleteCard} />
     </main>
   );
 }

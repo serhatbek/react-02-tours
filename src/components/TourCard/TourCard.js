@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const TourCard = ({ img, title, price, desc, delBtn }) => {
+const TourCard = ({ id, img, title, price, desc, deleteCard }) => {
   const [readMore, setReadMore] = useState(false);
 
   const toggleReadMore = () => {
@@ -23,7 +23,7 @@ const TourCard = ({ img, title, price, desc, delBtn }) => {
             {!readMore ? 'Read More' : 'Show Less'}
           </button>
         </p>
-        <button onClick={delBtn}>Not Interested</button>
+        <button onClick={() => deleteCard(id)}>Not Interested</button>
       </div>
     </div>
   );

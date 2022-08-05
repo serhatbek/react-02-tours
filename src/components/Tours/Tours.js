@@ -1,11 +1,6 @@
 import TourCard from '../TourCard/TourCard';
 
-const Tours = ({ tours, setTours }) => {
-  const deleteCard = () => {
-    // setTours()
-    console.log('first');
-  };
-
+const Tours = ({ tours, deleteCard }) => {
   return (
     <>
       <h1 className='tours__heading'>Our Tours</h1>
@@ -14,11 +9,12 @@ const Tours = ({ tours, setTours }) => {
         return (
           <TourCard
             key={id}
+            id={id}
             img={image}
             title={name}
             price={price}
             desc={info}
-            delBtn={deleteCard}
+            deleteCard={deleteCard}
           />
         );
       })}

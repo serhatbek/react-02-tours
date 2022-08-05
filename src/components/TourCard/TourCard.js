@@ -23,7 +23,9 @@ const TourCard = ({ id, img, title, price, desc, deleteCard }) => {
             {!readMore ? 'Read More' : 'Show Less'}
           </button>
         </p>
-        <button onClick={() => deleteCard(id)}>Not Interested</button>
+        <button className='btn' onClick={() => deleteCard(id)}>
+          Not Interested
+        </button>
       </div>
     </div>
   );

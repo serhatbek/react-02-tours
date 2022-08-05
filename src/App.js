@@ -38,6 +38,17 @@ function App() {
     fetchToursData();
   }, []);
 
+  if (tours.length === 0) {
+    return (
+      <main>
+        <h1 className='tours__heading'>No Tours Left</h1>
+        <button className='btn' onClick={fetchToursData}>
+          Refresh
+        </button>
+      </main>
+    );
+  }
+
   if (loading) {
     return (
       <main>

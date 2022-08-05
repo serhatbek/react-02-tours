@@ -1,13 +1,15 @@
-const TourCard = () => {
+const TourCard = ({ img, title, price, desc }) => {
   return (
     <div className='tour-card'>
-      <figure></figure>
-      <div>
-        <h3>
-          <span></span>
-          <span></span>
-        </h3>
-        <p></p>
+      <figure>
+        <img src={img} />
+      </figure>
+      <div className='tour-card__content'>
+        <div>
+          <h3>{title}</h3>
+          <span>{price}</span>
+        </div>
+        <p>{desc}</p>
         <button>Not Interested</button>
       </div>
     </div>

@@ -11,8 +11,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
-  console.log('tours hook', tours);
-
   const fetchToursData = async () => {
     setLoading(true);
 
@@ -41,7 +39,7 @@ function App() {
 
   return (
     <main>
-      <Tours />
+      <Tours tours={tours} />
     </main>
   );
 }

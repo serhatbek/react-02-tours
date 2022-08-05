@@ -2,7 +2,7 @@ const TourCard = ({ img, title, price, desc }) => {
   return (
     <div className='tour-card'>
       <figure>
-        <img src={img} />
+        <img src={img} alt={title} />
       </figure>
       <div className='tour-card__content'>
         <div>
